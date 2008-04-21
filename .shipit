@@ -1,0 +1,3 @@
+steps = FindVersion, ChangeVersion, CheckYAMLChangeLog, DistTest, Manifest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean
+
+svk.tagpattern = //local/hanekomu-cpan/tags/Data-Storage-%v
