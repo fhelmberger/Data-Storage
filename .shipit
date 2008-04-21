@@ -1,0 +1,8 @@
+steps = ApplyYAMLChangeLogVersion, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
+
+svk.tagpattern = //local/hanekomu-cpan/tags/Data-Storage-%v
+
+twitter.config = ~/.twitterrc
+twitter.distname = Data-Storage
+twitter.message = shipped %d %v - soon at %u
+
