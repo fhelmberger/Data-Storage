@@ -1,0 +1,52 @@
+---
+global:
+  name: Data-Storage
+releases:
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - set the version to 0.06
+      - moved generated documentation of interited methods to after documentation of this class' methods so the manpage is more readable
+      - Data::Storage now uses mk_constructor and so also derives from Class::Accessor::Complex
+    date: 2008-02-25T14:05:30Z
+    tags: []
+    version: 0.06
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - set the version to 0.05
+      - test
+    date: 2007-11-28T22:11:34Z
+    tags: []
+    version: 0.05
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - 'added requirements for Class::Accessor::Complex, Class::Accessor::Constructor and Error::Hierarchy'
+      - '.shipit: added Twitter step'
+      - 'Makefile.PL: added auto_install() and process_templates()'
+      - 'lib/*: converted to template'
+      - updated MANIFEST
+      - updated t/perlcriticrc
+      - 'Data::Storage::DBI: added dbhost, port and support for that in connect_string(). Moved this functionality out of Data::Storage::DBI::Postgres'
+      - test
+    date: 2007-11-28T22:07:12Z
+    tags:
+      - BUGFIX
+    version: 0.04
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - removed another dependency on Class::Scaffold. Sigh...
+      - fixed inheritance and constructor in Data::Storage::Statement
+    date: 2007-11-07T19:32:48+01:00
+    tags: []
+    version: 0.03
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - removed circular dependency on Class::Scaffold
+    date: 2007-11-07T18:49:30+01:00
+    tags: []
+    version: 0.02
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - original version
+    date: 2007-11-07T11:39:00+01:00
+    tags: []
+    version: 0.01
