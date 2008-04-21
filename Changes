@@ -1,0 +1,12 @@
+Revision history for Perl extension Data::Storage.
+
+0.03  Mi Nov  7 19:32:48 CET 2007
+    - removed another dependency on Class::Scaffold. Sigh...
+    - fixed inheritance and constructor in Data::Storage::Statement
+
+0.02  Mi Nov  7 18:49:30 CET 2007
+    - removed circular dependency on Class::Scaffold
+
+0.01  Mi Nov  7 11:39:00 CET 2007
+    - original version
+
