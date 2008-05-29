@@ -6,7 +6,8 @@ releases:
     changes:
       - set the version to 0.07
       - 'Data::Storage::DBI: avoid rollback and commit if AutoCommit is enabled; this used to cause an error message'
-    date: 2008-03-06T15:49:21Z
+      - '.shipit: fixed svk.tagpattern'
+    date: 2008-05-29T12:03:50Z
     tags: []
     version: 0.07
   - author: 'Marcel Gruenauer <marcel@cpan.org>'
