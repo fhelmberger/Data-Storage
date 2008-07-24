@@ -1,6 +1,6 @@
-steps = ApplyYAMLChangeLogVersion, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
+steps = FindVersion, ChangeVersion, CheckChangeLog, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
 
-svk.tagpattern = //local/coderepos/Data-Storage/tags/Data-Storage-%v
+svn.tagpattern = http://svn.coderepos.org/share/lang/perl/Data-Storage/tags/Data-Storage-%v
 
 twitter.config = ~/.twitterrc
 twitter.distname = Data-Storage

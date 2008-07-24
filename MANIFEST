@@ -30,9 +30,13 @@ lib/Data/Storage/Memory.pm
 lib/Data/Storage/Mock.pm
 lib/Data/Storage/Null.pm
 lib/Data/Storage/Statement.pm
+LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
+t/00_compile.t
+t/00_perl_critic.t
+t/00_pod.t
 t/perlcriticrc
 t/README.txt
