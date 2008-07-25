@@ -7,7 +7,7 @@ use warnings;
 use Data::Miscellany 'value_of';
 
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 
 use base qw(Class::Accessor::Complex Class::Accessor::Constructor);
