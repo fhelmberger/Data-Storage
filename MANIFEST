@@ -21,6 +21,7 @@ lib/Data/Storage/DBI/Result.pm
 lib/Data/Storage/DBI/SQLite.pm
 lib/Data/Storage/DBI/Sybase.pm
 lib/Data/Storage/DBI/Unrealized.pm
+lib/Data/Storage/DBIC.pm
 lib/Data/Storage/Filesystem.pm
 lib/Data/Storage/Filesystem/Record.pm
 lib/Data/Storage/Memory.pm
