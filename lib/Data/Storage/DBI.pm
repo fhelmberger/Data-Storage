@@ -71,9 +71,13 @@ sub is_connected {
          ref($self->dbh) eq 'DBI::db'
       || ref($self->dbh) eq 'Apache::DBI::db'
     );
-    $self->log->debug('storage [%s] is %s',
-        $self->dbname,
-        $is_connected ? 'connected' : 'not connected');
+
+    # No logging unless it's necessary - this is called often and is expensive
+
+    # $self->log->debug('storage [%s] is %s',
+    #     $self->dbname,
+    #     $is_connected ? 'connected' : 'not connected');
+
     $is_connected;
 }
 
@@ -131,10 +135,6 @@ sub disconnect {
 
 sub rollback {
     my $self = shift;
-
-    # avoid "rollback ineffective with AutoCommit enabled" error
-    return if $self->AutoCommit;
-
     $self->dbh->rollback;
     $self->log->debug('did rollback');
 }
@@ -187,6 +187,18 @@ sub prepare {
     my ($self, $query) = @_;
     Data::Storage::Statement->new(
         sth => $self->dbh->prepare($self->rewrite_query($query))
+    );
+}
+
+
+sub prepare_named {
+    my ($self, $name, $query) = @_;
+
+    our %cache;
+    $cache{$name} ||= $self->rewrite_query($query);
+
+    Data::Storage::Statement->new(
+        sth => $self->dbh->prepare($cache{$name})
     );
 }
 
@@ -550,11 +562,17 @@ The superclass L<Tie::StdHash> defines these methods and functions:
     CLEAR(), DELETE(), EXISTS(), FETCH(), FIRSTKEY(), NEXTKEY(), SCALAR(),
     TIEHASH()
 
+=head1 TAGS
+
+If you talk about this module in blogs, on del.icio.us or anywhere else,
+please use the C<datastorage> tag.
+
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
-Please report any bugs or feature requests through the web interface at
+Please report any bugs or feature requests to
+C<<bug-data-storage@rt.cpan.org>>, or through the web interface at
 L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
@@ -567,13 +585,13 @@ The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
 site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004-2008 by the authors.
+Copyright 2004-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

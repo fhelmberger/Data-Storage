@@ -4,6 +4,8 @@ Revision history for Perl extension Data-Storage
      - Changed dist style and Changes back to standard. People didn't like it -
        the nail that sticks out gets hammered down.
      - Added standard test files; this will also help with CPANTS.
+     - added prepare_named() and other optimizations
+     - commit() returns if AutoCommit is enabled
 
 0.07  Thu, 29 May 2008 12:03:50 -0000 (Marcel Gruenauer <marcel@cpan.org>)
      - set the version to 0.07
