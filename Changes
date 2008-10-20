@@ -1,5 +1,10 @@
 Revision history for Perl extension Data-Storage
 
+0.09  Mon Oct 20 23:04:09 CEST 2008 (Marcel Gruenauer <marcel@cpan.org>)
+     - Data::Storage::Null adds empty FIRST_CONSTRUCTOR_ARGS so it doesn't get
+       handled by AUTOLOAD
+     - updated version numbers to 0.09
+
 0.08  Thu Jul 25 15:27:43 CEST 2008 (Marcel Gruenauer <marcel@cpan.org>)
      - Changed dist style and Changes back to standard. People didn't like it -
        the nail that sticks out gets hammered down.

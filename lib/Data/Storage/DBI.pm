@@ -17,7 +17,7 @@ use Error::Hierarchy::Internal::DBI;
 use Error ':try';
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 use base qw(Data::Storage Class::Accessor::Complex);

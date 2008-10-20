@@ -5,7 +5,7 @@ use strict;
 use Error::Hierarchy::Util 'assert_defined';
 use Error ':try';
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use base 'Data::Storage::DBI';
 

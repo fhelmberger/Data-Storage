@@ -7,13 +7,15 @@ use warnings;
 use Class::Null;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 # use Class::Null for methods not implemented here or in
 # Data::Storage
 
 use base 'Data::Storage::Memory';
+
+sub FIRST_CONSTRUCTOR_ARGS { () }
 
 sub is_connected { 1 }
 
