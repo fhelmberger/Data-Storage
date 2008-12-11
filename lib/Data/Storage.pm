@@ -88,7 +88,7 @@ __END__
 
 =head1 NAME
 
-Data::Storage - generic abstract storage mechanism
+Data::Storage - Generic abstract storage mechanism
 
 =head1 SYNOPSIS
 
