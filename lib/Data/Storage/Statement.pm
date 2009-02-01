@@ -101,7 +101,7 @@ next release will have more documentation.
 
 =over 4
 
-=item new
+=item C<new>
 
     my $obj = Data::Storage::Statement->new;
     my $obj = Data::Storage::Statement->new(%args);
@@ -112,13 +112,13 @@ component is initialized by calling the method of the same name with the given
 value. If called with a single hash reference, it is dereferenced and its
 key/value pairs are set as described before.
 
-=item clear_sth
+=item C<clear_sth>
 
     $obj->clear_sth;
 
 Clears the value.
 
-=item sth
+=item C<sth>
 
     my $value = $obj->sth;
     $obj->sth($value);
@@ -126,7 +126,7 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item sth_clear
+=item C<sth_clear>
 
     $obj->sth_clear;
 

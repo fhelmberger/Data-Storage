@@ -67,13 +67,13 @@ next release will have more documentation.
 
 =over 4
 
-=item clear_should_die_on_connect
+=item C<clear_should_die_on_connect>
 
     $obj->clear_should_die_on_connect;
 
 Clears the value.
 
-=item should_die_on_connect
+=item C<should_die_on_connect>
 
     my $value = $obj->should_die_on_connect;
     $obj->should_die_on_connect($value);
@@ -81,7 +81,7 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item should_die_on_connect_clear
+=item C<should_die_on_connect_clear>
 
     $obj->should_die_on_connect_clear;
 

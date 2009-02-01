@@ -57,13 +57,13 @@ next release will have more documentation.
 
 =over 4
 
-=item clear_dbserver
+=item C<clear_dbserver>
 
     $obj->clear_dbserver;
 
 Clears the value.
 
-=item dbserver
+=item C<dbserver>
 
     my $value = $obj->dbserver;
     $obj->dbserver($value);
@@ -71,7 +71,7 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbserver_clear
+=item C<dbserver_clear>
 
     $obj->dbserver_clear;
 

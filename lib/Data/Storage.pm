@@ -103,7 +103,7 @@ next release will have more documentation.
 
 =over 4
 
-=item new
+=item C<new>
 
     my $obj = Data::Storage->new;
     my $obj = Data::Storage->new(%args);
@@ -114,19 +114,19 @@ component is initialized by calling the method of the same name with the given
 value. If called with a single hash reference, it is dereferenced and its
 key/value pairs are set as described before.
 
-=item clear_log
+=item C<clear_log>
 
     $obj->clear_log;
 
 Clears the value.
 
-=item clear_rollback_mode
+=item C<clear_rollback_mode>
 
     $obj->clear_rollback_mode;
 
 Clears the boolean value by setting it to 0.
 
-=item log
+=item C<log>
 
     my $value = $obj->log;
     $obj->log($value);
@@ -134,13 +134,13 @@ Clears the boolean value by setting it to 0.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item log_clear
+=item C<log_clear>
 
     $obj->log_clear;
 
 Clears the value.
 
-=item rollback_mode
+=item C<rollback_mode>
 
     $obj->rollback_mode($value);
     my $value = $obj->rollback_mode;
@@ -149,19 +149,19 @@ If called without an argument, returns the boolean value (0 or 1). If called
 with an argument, it normalizes it to the boolean value. That is, the values
 0, undef and the empty string become 0; everything else becomes 1.
 
-=item rollback_mode_clear
+=item C<rollback_mode_clear>
 
     $obj->rollback_mode_clear;
 
 Clears the boolean value by setting it to 0.
 
-=item rollback_mode_set
+=item C<rollback_mode_set>
 
     $obj->rollback_mode_set;
 
 Sets the boolean value to 1.
 
-=item set_rollback_mode
+=item C<set_rollback_mode>
 
     $obj->set_rollback_mode;
 

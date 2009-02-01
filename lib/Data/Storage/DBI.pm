@@ -328,79 +328,79 @@ value. If called with a single argument, it sets the value.
 
 Clears the value.
 
-=item clear_AutoCommit
+=item C<clear_AutoCommit>
 
     $obj->clear_AutoCommit;
 
 Clears the value.
 
-=item clear_HandleError
+=item C<clear_HandleError>
 
     $obj->clear_HandleError;
 
 Clears the value.
 
-=item clear_LongReadLen
+=item C<clear_LongReadLen>
 
     $obj->clear_LongReadLen;
 
 Clears the value.
 
-=item clear_PrintError
+=item C<clear_PrintError>
 
     $obj->clear_PrintError;
 
 Clears the value.
 
-=item clear_RaiseError
+=item C<clear_RaiseError>
 
     $obj->clear_RaiseError;
 
 Clears the value.
 
-=item clear_dbh
+=item C<clear_dbh>
 
     $obj->clear_dbh;
 
 Clears the value.
 
-=item clear_dbhost
+=item C<clear_dbhost>
 
     $obj->clear_dbhost;
 
 Clears the value.
 
-=item clear_dbname
+=item C<clear_dbname>
 
     $obj->clear_dbname;
 
 Clears the value.
 
-=item clear_dbpass
+=item C<clear_dbpass>
 
     $obj->clear_dbpass;
 
 Clears the value.
 
-=item clear_dbuser
+=item C<clear_dbuser>
 
     $obj->clear_dbuser;
 
 Clears the value.
 
-=item clear_port
+=item C<clear_port>
 
     $obj->clear_port;
 
 Clears the value.
 
-=item clear_schema_prefix
+=item C<clear_schema_prefix>
 
     $obj->clear_schema_prefix;
 
 Clears the value.
 
-=item dbh
+=item C<dbh>
 
     my $value = $obj->dbh;
     $obj->dbh($value);
@@ -408,13 +408,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbh_clear
+=item C<dbh_clear>
 
     $obj->dbh_clear;
 
 Clears the value.
 
-=item dbhost
+=item C<dbhost>
 
     my $value = $obj->dbhost;
     $obj->dbhost($value);
@@ -422,13 +422,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbhost_clear
+=item C<dbhost_clear>
 
     $obj->dbhost_clear;
 
 Clears the value.
 
-=item dbname
+=item C<dbname>
 
     my $value = $obj->dbname;
     $obj->dbname($value);
@@ -436,13 +436,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbname_clear
+=item C<dbname_clear>
 
     $obj->dbname_clear;
 
 Clears the value.
 
-=item dbpass
+=item C<dbpass>
 
     my $value = $obj->dbpass;
     $obj->dbpass($value);
@@ -450,13 +450,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbpass_clear
+=item C<dbpass_clear>
 
     $obj->dbpass_clear;
 
 Clears the value.
 
-=item dbuser
+=item C<dbuser>
 
     my $value = $obj->dbuser;
     $obj->dbuser($value);
@@ -464,13 +464,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item dbuser_clear
+=item C<dbuser_clear>
 
     $obj->dbuser_clear;
 
 Clears the value.
 
-=item port
+=item C<port>
 
     my $value = $obj->port;
     $obj->port($value);
@@ -478,13 +478,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item port_clear
+=item C<port_clear>
 
     $obj->port_clear;
 
 Clears the value.
 
-=item schema_prefix
+=item C<schema_prefix>
 
     my $value = $obj->schema_prefix;
     $obj->schema_prefix($value);
@@ -492,7 +492,7 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item schema_prefix_clear
+=item C<schema_prefix_clear>
 
     $obj->schema_prefix_clear;
 
@@ -564,7 +564,7 @@ The superclass L<Tie::StdHash> defines these methods and functions:
 
 =head1 TAGS
 
-If you talk about this module in blogs, on del.icio.us or anywhere else,
+If you talk about this module in blogs, on L<delicious.com> or anywhere else,
 please use the C<datastorage> tag.
 
 =head1 BUGS AND LIMITATIONS
