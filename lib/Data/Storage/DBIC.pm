@@ -2,7 +2,7 @@ package Data::Storage::DBIC;
 
 use warnings;
 use strict;
-use Error::Hierarchy::Util 'assert_defined';
+use Error::Hierarchy::Util qw(assert_defined load_class);
 use Error ':try';
 
 our $VERSION = '0.09';
@@ -41,6 +41,7 @@ sub connect {
     );
 
     try {
+        load_class $self->SCHEMA_CLASS, 0;
         my $class = $self->SCHEMA_CLASS;
         $self->schema($class->connect(
             $self->dbname,
