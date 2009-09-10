@@ -3,7 +3,10 @@ include 'Module::AutoInstall';
 
 name 'Data-Storage';
 all_from 'lib/Data/Storage.pm';
-perl_version '5.006';
+
+auto_set_homepage;
+auto_set_bugtracker;
+auto_set_repository;
 
 requires 'Class::Accessor::Complex';
 requires 'Class::Accessor::Constructor';
