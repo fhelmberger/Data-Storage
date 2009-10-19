@@ -1,16 +1,8 @@
 package Data::Storage::DBI::Oracle;
-
-# $Id: Oracle.pm 13295 2007-07-02 11:38:45Z gr $
-
 use strict;
 use warnings;
-
-
 our $VERSION = '0.09';
-
-
 use base 'Data::Storage::DBI';
-
 
 sub connect_string {
     my $self = shift;
@@ -18,24 +10,17 @@ sub connect_string {
 }
 
 # Database type-specifc rewrites
-
 sub rewrite_query_for_dbd {
     my ($self, $query) = @_;
-
     $query =~ s/<USER>/user/g;
     $query =~ s/<NOW>/sysdate/g;
     $query =~ s/<NEXTVAL>\((.*?)\)/$1.NEXTVAL/g;
     $query =~ s/<BOOL>\((.*?)\)/sprintf "DECODE(%s, '%s', 1, '%s', 0)", $1,
         $self->delegate->YES, $self->delegate->NO
     /eg;
-
     $query;
 }
-
-
 1;
-
-
 __END__
 
 
@@ -152,7 +137,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
 
 =head1 AUTHORS
 

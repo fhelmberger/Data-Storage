@@ -1,33 +1,20 @@
 package Data::Storage::DBI::Mock;
-
-# $Id: Mock.pm 10689 2006-02-02 15:59:23Z gr $
-
 use strict;
 use warnings;
-
-
 our $VERSION = '0.09';
-
-
 use base 'Data::Storage::Mock';
-
 
 sub die_on_connect {
     my $self = shift;
 
     # simulate the bare minimum of a ::DBH exception
-
     throw Error::Hierarchy::Internal::DBI::DBH(
         error  => "can't connect",
         errstr => "can't connect",
         err    => 1,
     );
 }
-
-
 1;
-
-
 __END__
 
 
@@ -136,7 +123,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
 
 =head1 AUTHORS
 

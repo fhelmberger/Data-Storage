@@ -1,30 +1,22 @@
 package Data::Storage;
-
-# $Id: Storage.pm 13653 2007-10-22 09:11:20Z gr $
-
+use 5.006;
 use strict;
 use warnings;
-use 5.006;
 use Class::Null;
-
 our $VERSION = '0.09';
-
 use base qw(
-    Class::Accessor::Complex
-    Class::Accessor::Constructor
+  Class::Accessor::Complex
+  Class::Accessor::Constructor
 );
-
+#<<<
 __PACKAGE__
     ->mk_constructor
     ->mk_boolean_accessors(qw(rollback_mode))
     ->mk_abstract_accessors(qw(create initialize_data))
     ->mk_scalar_accessors(qw(log));
-
+#>>>
 use constant is_abstract => 1;
-
-use constant DEFAULTS => (
-    log => Class::Null->new,
-);
+use constant DEFAULTS => (log => Class::Null->new,);
 
 sub setup {
     my $self = shift;
@@ -33,11 +25,9 @@ sub setup {
     $self->log->debug('populating storage with initial data');
     $self->initialize_data;
 }
-
-sub test_setup {}
+sub test_setup { }
 
 # convenience method to access an object's id
-
 sub id {
     my $self   = shift;
     my $object = shift;
@@ -54,23 +44,18 @@ sub id {
 # get_set_std accessor, because the business object's storage might be a
 # multiplexing storage, and the object would have a different id in each
 # multiplexed storage.
-
 sub signature {
     my $self = shift;
     ref $self;
 }
-
-sub connect {}
-sub disconnect {}
+sub connect    { }
+sub disconnect { }
 
 # Some storage classes won't make a difference between a normal connection and
 # a lazy connection - for memory storages, there is no connection anyway. But
 # see Data::Storage::DBI for a way to use lazy connections.
-
-sub lazy_connect {}
-
+sub lazy_connect { }
 1;
-
 __END__
 
 =head1 NAME
@@ -227,7 +212,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
 
 =head1 AUTHORS
 

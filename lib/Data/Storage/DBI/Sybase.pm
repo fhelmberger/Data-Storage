@@ -1,41 +1,25 @@
 package Data::Storage::DBI::Sybase;
-
-# $Id: Sybase.pm 13653 2007-10-22 09:11:20Z gr $
-
 use strict;
 use warnings;
-
-
 our $VERSION = '0.09';
-
-
 use base qw(Data::Storage::DBI Class::Accessor::Complex);
-
-
 __PACKAGE__->mk_scalar_accessors(qw(dbserver));
-
 
 sub connect_string {
     my $self = shift;
     sprintf("DBI:Sybase:server=%s;database=%s", $self->dbserver, $self->dbname);
 }
 
-
 # no LongReadLen
-
 sub get_connect_options {
     my $self = shift;
-    { RaiseError  => $self->RaiseError,
-      PrintError  => $self->PrintError,
-      AutoCommit  => $self->AutoCommit,
-      HandleError => $self->HandleError,
-    }
+    {   RaiseError  => $self->RaiseError,
+        PrintError  => $self->PrintError,
+        AutoCommit  => $self->AutoCommit,
+        HandleError => $self->HandleError,
+    };
 }
-
-
 1;
-
-
 __END__
 
 
@@ -170,7 +154,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
 
 =head1 AUTHORS
 
