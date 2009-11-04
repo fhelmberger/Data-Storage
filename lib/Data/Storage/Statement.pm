@@ -19,12 +19,16 @@ sub DESTROY                { }
 # Most methods are forwarded onto the statement handle, except for the ones
 # handled differently below.
 sub AUTOLOAD {
-    my $self = shift;
     (my $method = our $AUTOLOAD) =~ s/.*://;
 
-    # This package is just a wrapper, so report where the call came from
-    local $Error::Depth = $Error::Depth + 1;
-    $self->sth->$method(@_);
+    no strict 'refs';
+    *$AUTOLOAD = sub {
+        my $self = shift;
+        # This package is just a wrapper, so report where the call came from
+        local $Error::Depth = $Error::Depth + 1;
+        $self->sth->$method(@_);
+    };
+    goto &$AUTOLOAD;
 }
 
 # Stringify potential value objects.

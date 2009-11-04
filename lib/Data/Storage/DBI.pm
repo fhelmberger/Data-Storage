@@ -88,10 +88,9 @@ sub connect {
         }
         throw Error::Hierarchy::Internal::CustomMessage(
             custom_message => sprintf
-              "couldn't connect to storage [%s (%s/%s)]: %s",
+              "couldn't connect to storage [%s (user %s)]: %s",
             $self->dbname,
             $self->dbuser,
-            $self->dbpass,
             $E
         );
     };
@@ -209,7 +208,7 @@ next release will have more documentation.
 
 =over 4
 
-=item AutoCommit
+=item C<AutoCommit>
 
     my $value = $obj->AutoCommit;
     $obj->AutoCommit($value);
@@ -217,13 +216,13 @@ next release will have more documentation.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item AutoCommit_clear
+=item C<AutoCommit_clear>
 
     $obj->AutoCommit_clear;
 
 Clears the value.
 
-=item HandleError
+=item C<HandleError>
 
     my $value = $obj->HandleError;
     $obj->HandleError($value);
@@ -231,13 +230,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item HandleError_clear
+=item C<HandleError_clear>
 
     $obj->HandleError_clear;
 
 Clears the value.
 
-=item LongReadLen
+=item C<LongReadLen>
 
     my $value = $obj->LongReadLen;
     $obj->LongReadLen($value);
@@ -245,13 +244,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item LongReadLen_clear
+=item C<LongReadLen_clear>
 
     $obj->LongReadLen_clear;
 
 Clears the value.
 
-=item PrintError
+=item C<PrintError>
 
     my $value = $obj->PrintError;
     $obj->PrintError($value);
@@ -259,13 +258,13 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item PrintError_clear
+=item C<PrintError_clear>
 
     $obj->PrintError_clear;
 
 Clears the value.
 
-=item RaiseError
+=item C<RaiseError>
 
     my $value = $obj->RaiseError;
     $obj->RaiseError($value);
@@ -273,7 +272,7 @@ Clears the value.
 A basic getter/setter method. If called without an argument, it returns the
 value. If called with a single argument, it sets the value.
 
-=item RaiseError_clear
+=item C<RaiseError_clear>
 
     $obj->RaiseError_clear;
 

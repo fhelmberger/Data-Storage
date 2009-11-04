@@ -1,5 +1,10 @@
 Revision history for Perl extension Data-Storage
 
+0.10  Wed 2009.11.04 23:46:30 CET (Marcel Gruenauer <marcel@cpan.org>)
+     - Data::Storage::DBI: omit password in exception if connect fails
+     - Data::Storage::Statement: AUTOLOAD generates methodss so subsequent
+       calls are direct and faster
+
 0.09  Mon Oct 20 23:04:09 CEST 2008 (Marcel Gruenauer <marcel@cpan.org>)
      - Data::Storage::Null adds empty FIRST_CONSTRUCTOR_ARGS so it doesn't get
        handled by AUTOLOAD
