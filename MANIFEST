@@ -40,7 +40,6 @@ LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
-pm_to_blib
 README
 README.mkdn
 t/README.txt
