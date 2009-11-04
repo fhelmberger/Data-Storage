@@ -1,7 +1,7 @@
 package Data::Storage::DBI::Unrealized;
 use strict;
 use warnings;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 use base 'Class::Accessor::Complex';
 #<<<
 __PACKAGE__

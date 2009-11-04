@@ -1,7 +1,7 @@
 package Data::Storage::DBI::Oracle;
 use strict;
 use warnings;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 use base 'Data::Storage::DBI';
 
 sub connect_string {

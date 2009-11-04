@@ -12,7 +12,7 @@ use Data::Storage::Statement;
 use Error::Hierarchy::Util 'assert_defined';
 use Error::Hierarchy::Internal::DBI;
 use Error ':try';
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 use base qw(Data::Storage Class::Accessor::Complex);
 __PACKAGE__->mk_scalar_accessors(
     qw(
