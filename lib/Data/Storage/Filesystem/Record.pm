@@ -1,7 +1,7 @@
 package Data::Storage::Filesystem::Record;
 use strict;
 use warnings;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base 'Class::Accessor::Complex';
 #<<<
 __PACKAGE__

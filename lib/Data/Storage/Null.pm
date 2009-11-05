@@ -2,7 +2,7 @@ package Data::Storage::Null;
 use strict;
 use warnings;
 use Class::Null;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 # use Class::Null for methods not implemented here or in
 # Data::Storage

@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 use Class::Null;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base qw(
   Class::Accessor::Complex
   Class::Accessor::Constructor

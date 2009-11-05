@@ -1,7 +1,7 @@
 package Data::Storage::DBI::Sybase;
 use strict;
 use warnings;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base qw(Data::Storage::DBI Class::Accessor::Complex);
 __PACKAGE__->mk_scalar_accessors(qw(dbserver));
 

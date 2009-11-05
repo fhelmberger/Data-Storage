@@ -1,7 +1,7 @@
 package Data::Storage::DBI::SQLite;
 use strict;
 use warnings;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base 'Data::Storage::DBI';
 
 sub connect_string {

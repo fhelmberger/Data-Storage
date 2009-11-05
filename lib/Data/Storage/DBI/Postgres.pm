@@ -2,7 +2,7 @@ package Data::Storage::DBI::Postgres;
 use strict;
 use warnings;
 use Error::Hierarchy::Util 'assert_defined';
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base qw(Data::Storage::DBI Class::Accessor::Complex);
 use constant connect_string_dbi_id => 'Pg';
 

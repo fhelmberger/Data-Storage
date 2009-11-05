@@ -2,7 +2,7 @@ package Data::Storage::Statement;
 use strict;
 use warnings;
 use Data::Miscellany 'value_of';
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base qw(Class::Accessor::Complex Class::Accessor::Constructor);
 #<<<
 __PACKAGE__

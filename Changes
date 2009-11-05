@@ -1,5 +1,8 @@
 Revision history for Perl extension Data-Storage
 
+0.11  Wed 2009.11.04 23:46:30 CET (Marcel Gruenauer <marcel@cpan.org>)
+     - Data::Storage::DBI: prepare_named() now uses DBI's prepare_cached()
+
 0.10  Wed 2009.11.04 23:46:30 CET (Marcel Gruenauer <marcel@cpan.org>)
      - Data::Storage::DBI: omit password in exception if connect fails
      - Data::Storage::Statement: AUTOLOAD generates methodss so subsequent

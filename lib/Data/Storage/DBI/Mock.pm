@@ -1,7 +1,7 @@
 package Data::Storage::DBI::Mock;
 use strict;
 use warnings;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base 'Data::Storage::Mock';
 
 sub die_on_connect {

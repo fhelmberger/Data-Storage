@@ -3,7 +3,7 @@ use warnings;
 use strict;
 use Error::Hierarchy::Util qw(assert_defined load_class);
 use Error ':try';
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base 'Data::Storage::DBI';
 #<<<
 __PACKAGE__

@@ -1,7 +1,7 @@
 package Data::Storage::Filesystem;
 use strict;
 use warnings;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 use base qw(Data::Storage Class::Accessor::Complex);
 use constant DEFAULTS => (mode => '0664');
 #<<<
