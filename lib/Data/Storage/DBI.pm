@@ -11,6 +11,7 @@ use Data::Storage::DBI::Unrealized;
 use Data::Storage::Statement;
 use Error::Hierarchy::Util 'assert_defined';
 use Error::Hierarchy::Internal::DBI;
+use Data::Storage::Exception::Connect;
 use Error ':try';
 our $VERSION = '0.11';
 use base qw(Data::Storage Class::Accessor::Complex);
@@ -86,12 +87,10 @@ sub connect {
             $self->set_rollback_mode;
             $self->disconnect;
         }
-        throw Error::Hierarchy::Internal::CustomMessage(
-            custom_message => sprintf
-              "couldn't connect to storage [%s (user %s)]: %s",
-            $self->dbname,
-            $self->dbuser,
-            $E
+        throw Data::Storage::Exception::Connect(
+            dbname => $self->dbname,
+            dbuser => $self->dbuser,
+            reason => $E
         );
     };
 }
