@@ -1,20 +1,19 @@
-package Data::Storage;
-use 5.006;
+use 5.008;
 use strict;
 use warnings;
+
+package Data::Storage;
+# ABSTRACT: Base class for storages
 use Class::Null;
-our $VERSION = '0.11';
-use base qw(
+use parent qw(
   Class::Accessor::Complex
   Class::Accessor::Constructor
 );
-#<<<
 __PACKAGE__
     ->mk_constructor
     ->mk_boolean_accessors(qw(rollback_mode))
     ->mk_abstract_accessors(qw(create initialize_data))
     ->mk_scalar_accessors(qw(log));
-#>>>
 use constant is_abstract => 1;
 use constant DEFAULTS => (log => Class::Null->new,);
 
@@ -56,117 +55,32 @@ sub disconnect { }
 # see Data::Storage::DBI for a way to use lazy connections.
 sub lazy_connect { }
 1;
-__END__
 
-=head1 NAME
+=method connect
 
-Data::Storage - Generic abstract storage mechanism
+FIXME
 
-=head1 SYNOPSIS
+=method disconnect
 
-    Data::Storage->new;
+FIXME
 
-=head1 DESCRIPTION
+=method id
 
-None yet. This is an early release; fully functional, but undocumented. The
-next release will have more documentation.
+FIXME
 
-=head1 METHODS
+=method lazy_connect
 
-=over 4
+FIXME
 
-=item C<new>
+=method setup
 
-    my $obj = Data::Storage->new;
-    my $obj = Data::Storage->new(%args);
+FIXME
 
-Creates and returns a new object. The constructor will accept as arguments a
-list of pairs, from component name to initial value. For each pair, the named
-component is initialized by calling the method of the same name with the given
-value. If called with a single hash reference, it is dereferenced and its
-key/value pairs are set as described before.
+=method signature
 
-=item C<clear_log>
+FIXME
 
-    $obj->clear_log;
+=method test_setup
 
-Clears the value.
+FIXME
 
-=item C<clear_rollback_mode>
-
-    $obj->clear_rollback_mode;
-
-Clears the boolean value by setting it to 0.
-
-=item C<log>
-
-    my $value = $obj->log;
-    $obj->log($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<log_clear>
-
-    $obj->log_clear;
-
-Clears the value.
-
-=item C<rollback_mode>
-
-    $obj->rollback_mode($value);
-    my $value = $obj->rollback_mode;
-
-If called without an argument, returns the boolean value (0 or 1). If called
-with an argument, it normalizes it to the boolean value. That is, the values
-0, undef and the empty string become 0; everything else becomes 1.
-
-=item C<rollback_mode_clear>
-
-    $obj->rollback_mode_clear;
-
-Clears the boolean value by setting it to 0.
-
-=item C<rollback_mode_set>
-
-    $obj->rollback_mode_set;
-
-Sets the boolean value to 1.
-
-=item C<set_rollback_mode>
-
-    $obj->set_rollback_mode;
-
-Sets the boolean value to 1.
-
-=back
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
-
-=head1 AUTHORS
-
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2004-2009 by the authors.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut

@@ -1,8 +1,10 @@
-package Data::Storage::DBI::SQLite;
+use 5.008;
 use strict;
 use warnings;
-our $VERSION = '0.11';
-use base 'Data::Storage::DBI';
+
+package Data::Storage::DBI::SQLite;
+# ABSTRACT: Base class for SQLite DBI storages
+use parent 'Data::Storage::DBI';
 
 sub connect_string {
     my $self = shift;
@@ -34,59 +36,22 @@ sub last_id {
     $self->dbh->func('last_insert_rowid');
 }
 1;
-__END__
 
+=begin :prelude
 
+=for stopwords SQLite
 
-=head1 NAME
+=end :prelude
 
-Data::Storage::DBI::SQLite - generic abstract storage mechanism
+=method connect_string
 
-=head1 SYNOPSIS
+FIXME
 
-    Data::Storage::DBI::SQLite->new;
+=method last_id
 
-=head1 DESCRIPTION
+FIXME
 
-None yet. This is an early release; fully functional, but undocumented. The
-next release will have more documentation.
+=method test_setup
 
-=head1 METHODS
-
-=over 4
-
-
-
-=back
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
-
-=head1 AUTHORS
-
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2004-2009 by the authors.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-
-=cut
+FIXME
 

@@ -1,15 +1,15 @@
-package Data::Storage::DBIC;
-use warnings;
+use 5.008;
 use strict;
+use warnings;
+
+package Data::Storage::DBIC;
+# ABSTRACT: Base class for DBIx::Class-based storages
 use Error::Hierarchy::Util qw(assert_defined load_class);
 use Error ':try';
-our $VERSION = '0.11';
-use base 'Data::Storage::DBI';
-#<<<
+use parent 'Data::Storage::DBI';
 __PACKAGE__
     ->mk_scalar_accessors(qw(schema))
     ->mk_abstract_accessors(qw(SCHEMA_CLASS));
-#>>>
 
 sub is_connected {
     my $self         = shift;
@@ -88,3 +88,28 @@ sub lazy_connect {
     $self->connect(@_);
 }
 1;
+
+=method commit
+
+FIXME
+
+=method connect
+
+FIXME
+
+=method disconnect
+
+FIXME
+
+=method is_connected
+
+FIXME
+
+=method lazy_connect
+
+FIXME
+
+=method rollback
+
+FIXME
+

@@ -1,9 +1,11 @@
-package Data::Storage::DBI::Postgres;
+use 5.008;
 use strict;
 use warnings;
+
+package Data::Storage::DBI::Postgres;
+# ABSTRACT: Base class for PostgreSQL DBI storages
 use Error::Hierarchy::Util 'assert_defined';
-our $VERSION = '0.11';
-use base qw(Data::Storage::DBI Class::Accessor::Complex);
+use parent qw(Data::Storage::DBI Class::Accessor::Complex);
 use constant connect_string_dbi_id => 'Pg';
 
 sub connect {
@@ -54,59 +56,34 @@ sub rewrite_query_for_dbd {
     $query;
 }
 1;
-__END__
 
+=begin :prelude
 
+=for stopwords PostgreSQL
 
-=head1 NAME
+=end :prelude
 
-Data::Storage::DBI::Postgres - generic abstract storage mechanism
+=method connect
 
-=head1 SYNOPSIS
+FIXME
 
-    Data::Storage::DBI::Postgres->new;
+=method last_id
 
-=head1 DESCRIPTION
+FIXME
 
-None yet. This is an early release; fully functional, but undocumented. The
-next release will have more documentation.
+=method next_id
 
-=head1 METHODS
+FIXME
 
-=over 4
+=method rewrite_query_for_dbd
 
+FIXME
 
+=method test_setup
 
-=back
+FIXME
 
-=head1 BUGS AND LIMITATIONS
+=method trace
 
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
-
-=head1 AUTHORS
-
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2004-2009 by the authors.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-
-=cut
+FIXME
 

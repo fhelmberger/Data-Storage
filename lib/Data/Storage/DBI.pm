@@ -1,11 +1,14 @@
+use 5.008;
+use strict;
+use warnings;
+
 package Data::Storage::DBI;
+# ABSTRACT: Mixin class for storages based on DBI
 
 # Mixin class for storages based on a transactional RDBMS. When deriving from
 # this class, put it before Data::Storage in 'use base' so that its
 # connect() and disconnect() methods are found before the generic ones from
 # Data::Storage.
-use strict;
-use warnings;
 use DBI ':sql_types';
 use Data::Storage::DBI::Unrealized;
 use Data::Storage::Statement;
@@ -13,8 +16,7 @@ use Error::Hierarchy::Util 'assert_defined';
 use Error::Hierarchy::Internal::DBI;
 use Data::Storage::Exception::Connect;
 use Error ':try';
-our $VERSION = '0.11';
-use base qw(Data::Storage Class::Accessor::Complex);
+use parent qw(Data::Storage Class::Accessor::Complex);
 __PACKAGE__->mk_scalar_accessors(
     qw(
       dbh dbname dbuser dbpass dbhost port AutoCommit RaiseError PrintError
@@ -160,8 +162,7 @@ sub prepare_named {
     our %cache;
     $cache{$name} ||= $self->rewrite_query($query);
     Data::Storage::Statement->new(
-        sth => $self->dbh->prepare_cached($cache{$name})
-    );
+        sth => $self->dbh->prepare_cached($cache{$name}));
 }
 
 # Do nothing here; subclasses can override it to rename tables and columns,
@@ -188,303 +189,56 @@ sub signature {
       $self->SUPER::signature(), $self->dbname, $self->dbuser;
 }
 1;
-__END__
 
+=method commit
 
+FIXME
 
-=head1 NAME
+=method connect
 
-Data::Storage::DBI - generic abstract storage mechanism
+FIXME
 
-=head1 SYNOPSIS
+=method connect_string
 
-    Data::Storage::DBI->new;
+FIXME
 
-=head1 DESCRIPTION
+=method disconnect
 
-None yet. This is an early release; fully functional, but undocumented. The
-next release will have more documentation.
+FIXME
 
-=head1 METHODS
+=method get_connect_options
 
-=over 4
+FIXME
 
-=item C<AutoCommit>
+=method is_connected
 
-    my $value = $obj->AutoCommit;
-    $obj->AutoCommit($value);
+FIXME
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+=method lazy_connect
 
-=item C<AutoCommit_clear>
+FIXME
 
-    $obj->AutoCommit_clear;
+=method prepare
 
-Clears the value.
+FIXME
 
-=item C<HandleError>
+=method prepare_named
 
-    my $value = $obj->HandleError;
-    $obj->HandleError($value);
+FIXME
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+=method rewrite_query
 
-=item C<HandleError_clear>
+FIXME
 
-    $obj->HandleError_clear;
+=method rewrite_query_for_dbd
 
-Clears the value.
+FIXME
 
-=item C<LongReadLen>
+=method rollback
 
-    my $value = $obj->LongReadLen;
-    $obj->LongReadLen($value);
+FIXME
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+=method signature
 
-=item C<LongReadLen_clear>
-
-    $obj->LongReadLen_clear;
-
-Clears the value.
-
-=item C<PrintError>
-
-    my $value = $obj->PrintError;
-    $obj->PrintError($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<PrintError_clear>
-
-    $obj->PrintError_clear;
-
-Clears the value.
-
-=item C<RaiseError>
-
-    my $value = $obj->RaiseError;
-    $obj->RaiseError($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<RaiseError_clear>
-
-    $obj->RaiseError_clear;
-
-Clears the value.
-
-=item C<clear_AutoCommit>
-
-    $obj->clear_AutoCommit;
-
-Clears the value.
-
-=item C<clear_HandleError>
-
-    $obj->clear_HandleError;
-
-Clears the value.
-
-=item C<clear_LongReadLen>
-
-    $obj->clear_LongReadLen;
-
-Clears the value.
-
-=item C<clear_PrintError>
-
-    $obj->clear_PrintError;
-
-Clears the value.
-
-=item C<clear_RaiseError>
-
-    $obj->clear_RaiseError;
-
-Clears the value.
-
-=item C<clear_dbh>
-
-    $obj->clear_dbh;
-
-Clears the value.
-
-=item C<clear_dbhost>
-
-    $obj->clear_dbhost;
-
-Clears the value.
-
-=item C<clear_dbname>
-
-    $obj->clear_dbname;
-
-Clears the value.
-
-=item C<clear_dbpass>
-
-    $obj->clear_dbpass;
-
-Clears the value.
-
-=item C<clear_dbuser>
-
-    $obj->clear_dbuser;
-
-Clears the value.
-
-=item C<clear_port>
-
-    $obj->clear_port;
-
-Clears the value.
-
-=item C<clear_schema_prefix>
-
-    $obj->clear_schema_prefix;
-
-Clears the value.
-
-=item C<dbh>
-
-    my $value = $obj->dbh;
-    $obj->dbh($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<dbh_clear>
-
-    $obj->dbh_clear;
-
-Clears the value.
-
-=item C<dbhost>
-
-    my $value = $obj->dbhost;
-    $obj->dbhost($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<dbhost_clear>
-
-    $obj->dbhost_clear;
-
-Clears the value.
-
-=item C<dbname>
-
-    my $value = $obj->dbname;
-    $obj->dbname($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<dbname_clear>
-
-    $obj->dbname_clear;
-
-Clears the value.
-
-=item C<dbpass>
-
-    my $value = $obj->dbpass;
-    $obj->dbpass($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<dbpass_clear>
-
-    $obj->dbpass_clear;
-
-Clears the value.
-
-=item C<dbuser>
-
-    my $value = $obj->dbuser;
-    $obj->dbuser($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<dbuser_clear>
-
-    $obj->dbuser_clear;
-
-Clears the value.
-
-=item C<port>
-
-    my $value = $obj->port;
-    $obj->port($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<port_clear>
-
-    $obj->port_clear;
-
-Clears the value.
-
-=item C<schema_prefix>
-
-    my $value = $obj->schema_prefix;
-    $obj->schema_prefix($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
-
-=item C<schema_prefix_clear>
-
-    $obj->schema_prefix_clear;
-
-Clears the value.
-
-=back
-
-=head1 TAGS
-
-If you talk about this module in blogs, on L<delicious.com> or anywhere else,
-please use the C<datastorage> tag.
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests to
-C<<bug-data-storage@rt.cpan.org>>, or through the web interface at
-L<http://rt.cpan.org>.
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://search.cpan.org/dist/Data-Storage/>.
-
-=head1 AUTHOR
-
-Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2004-2009 by Marcel GrE<uuml>nauer
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-
-=cut
+FIXME
 
