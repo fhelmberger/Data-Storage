@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 package Data::Storage::DBI::Postgres;
+
 # ABSTRACT: Base class for PostgreSQL DBI storages
 use Error::Hierarchy::Util 'assert_defined';
 use parent qw(Data::Storage::DBI Class::Accessor::Complex);
@@ -34,7 +35,7 @@ sub next_id {
         throw Error::Hierarchy::Internal::ValueUndefined;
     }
     my $sth = $self->prepare("
-	SELECT NEXTVAL('$sequence_name')");
+    SELECT NEXTVAL('$sequence_name')");
     $sth->execute;
     my ($next_id) = $sth->fetchrow_array;
     $sth->finish;

@@ -1,6 +1,7 @@
 Revision history for Perl extension {{$dist->name}}
 
 {{$NEXT}}
+    - converted tabs to spaces
 
 1.100850  2010-03-26 16:22:50 Europe/Vienna
     - converted the distribution to Dist::Zilla-style
