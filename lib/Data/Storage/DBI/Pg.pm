@@ -2,9 +2,9 @@ use 5.008;
 use strict;
 use warnings;
 
-package Data::Storage::DBI::Postgres;
+package Data::Storage::DBI::Pg;
 
-# ABSTRACT: Base class for PostgreSQL DBI storages
+# ABSTRACT: Base class for Pg DBI storages
 use Error::Hierarchy::Util 'assert_defined';
 use parent qw(Data::Storage::DBI Class::Accessor::Complex);
 use constant connect_string_dbi_id => 'Pg';
@@ -60,7 +60,7 @@ sub rewrite_query_for_dbd {
 
 =begin :prelude
 
-=for stopwords PostgreSQL
+=for stopwords Pg
 
 =end :prelude
 
