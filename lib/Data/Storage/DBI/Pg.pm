@@ -53,7 +53,9 @@ sub rewrite_query_for_dbd {
     $query =~ s/<USER>/CURRENT_USER/g;
     $query =~ s/<NOW>/NOW()/g;
     $query =~ s/<NEXTVAL>\((.*?)\)/NEXTVAL('$1')/g;
-    $query =~ s/<BOOL>\((.*?)\)/expression::bool($1)/g;
+    $query =~ s/<BOOL>\((.*?)\)/sprintf "CASE %s WHEN '%s' THEN 1 WHEN '%s' THEN 0 END", $1,
+        $self->delegate->YES, $self->delegate->NO
+    /eg;
     $query;
 }
 1;
